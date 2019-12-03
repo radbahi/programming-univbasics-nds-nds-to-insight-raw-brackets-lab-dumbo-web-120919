@@ -36,14 +36,14 @@ while movieCounter < directors_database[directorCounter][:movies].length do
     movieCounter += 1 
   end
   directorHash[directors_database[directorCounter][:name]] = directorTotal
+    directorTotal += directors_database[directorCounter][:movies][movieCounter][:worldwide_gross]
+    totalCounter += directors_database[directorCounter][:movies][movieCounter][:worldwide_gross]
+    movieCounter += 1 
+  end
+  directorHash[directors_database[directorCounter]] << directorTotal
   directorTotal = 0
-  directorCounter += 1 
+  directorCounter += 1
+  directorHash
 end
-    directorHash
-end
-
-
-
-
 
 # MY OWN NOTE! OPEN PREVIOUS LAB AND LOOK AT HOW I ACCESSED THE VALUES USING KEYS INSTEAD OF NUMBERS LIKE IN THE EXAMPLES TO THE LEFT. YOU NEED TO SHOVEL INTO directorHash THE NAME OF THE DIRECTOR AS A KEY AND THE TOTAL THEIR MOVIES MADE AS THE VALUE. THEN ADD IT ALL UP TO A GRAND TOTAL IN THE END. STILL USE THE EXAMPLE TO THE LEFT AS A FOUNDATION FOR YOUR METHOD, THOUGH. IT'S NOT AS COMPLICATED AS YOU THINK IT IS!
